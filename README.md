@@ -16,6 +16,7 @@
 以下のコマンドを実行してローカルでページのデバッグができる
 
 ```sh
+cd docs
 bundle exec jekyll serve
 ```
 

@@ -1,13 +1,13 @@
-version: 0.1
+version: 0.2
 phases:
   install:
+    runtime-versions:
+      python: 3.x
     commands:
       - echo "install require library"
       - apt-get install git
       - apt-get install expect
-      - apt update
-      - apt install python3-pip
-      - pip3 install awscli --upgrade --user
+      - pip install awscli --upgrade --user
       - bash build-scripts/git-clone.sh
   pre_build:
     commands:

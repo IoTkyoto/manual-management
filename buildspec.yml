@@ -11,4 +11,6 @@ phases:
   build:
     commands:
       - echo "build"
-      - bash git-push.sh
+      - pwd
+      - ls
+      # - bash git-push.sh

@@ -5,7 +5,7 @@ phases:
       - echo "install require library"
       - apt-get install git
       - apt-get install expect
-  pre-build:
+  pre_build:
     commands:
       - echo "pre build"
   build:

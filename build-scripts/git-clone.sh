@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timeout=30
-command="aws configure --profile codecommit"
+command="aws configure"
 access_key=$CODEBUILD_ACCESS_KEY
 secret_key=$CODEBUILD_SECRET_KEY
 codecommit_url=$CODEBUILD_CODECOMMIT_URL
@@ -21,7 +21,5 @@ expect -c "
     exit 0
 "
 
-git config --global credential.helper "!aws codecommit --profile codecommit credential-helper $@"
-git config --global credential.UseHttpPath true
 echo $codecommit_url
 git clone $codecommit_url

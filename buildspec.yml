@@ -8,6 +8,7 @@ phases:
       - apt-get install git
       - apt-get install expect
       - pip install awscli --upgrade --user
+      - pip install git-remote-codecommit
       - bash build-scripts/git-clone.sh
   pre_build:
     commands:

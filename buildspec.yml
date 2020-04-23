@@ -5,12 +5,16 @@ phases:
       - echo "install require library"
       - apt-get install git
       - apt-get install expect
+      - apt-get install python3-pip
+      - pip3 install awscli --upgrade --user
+      - bash build-scripts/git-clone.sh
   pre_build:
     commands:
       - echo "pre build"
   build:
     commands:
       - echo "build"
+      - cd manual-management
       - pwd
       - ls
-      # - bash git-push.sh
+      - bash build-scripts/git-push.sh

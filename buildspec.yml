@@ -1,0 +1,14 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - echo "install require library"
+      - apt-get install git
+      - apt-get install expect
+  pre-build:
+    commands:
+      - echo "pre build"
+  build:
+    commands:
+      - echo "build"
+      - bash git-push.sh

@@ -2,9 +2,9 @@
 
 timeout=30
 command="aws configure"
-access_key=$CODEBUILD_ACCESS_KEY
-secret_key=$CODEBUILD_SECRET_KEY
-codecommit_url=$CODEBUILD_CODECOMMIT_URL
+access_key=$ACCESS_KEY
+secret_key=$SECRET_KEY
+codecommit_url=$CODECOMMIT_URL
 
 expect -c "
     set timeout ${timeout}

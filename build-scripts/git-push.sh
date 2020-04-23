@@ -2,9 +2,9 @@
 
 timeout=30
 command="git push origin master"
-user_name=$CODEBUILD_USER_NAME
-git_url=$CODEBUILD_GIT_URL
-access_token=$CODEBUILD_ACCESS_TOKEN
+user_name=$USER_NAME
+git_url=$GIT_URL
+access_token=$ACCESS_TOKEN
 
 git remote set-url origin $git_url
 

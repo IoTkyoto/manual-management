@@ -5,6 +5,7 @@ phases:
       python: 3.x
     commands:
       - echo "install require library"
+      - set
       - apt-get install git
       - apt-get install expect
       - pip install awscli --upgrade --user

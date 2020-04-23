@@ -24,4 +24,4 @@ expect -c "
 git config --global credential.helper "!aws codecommit --profile codecommit credential-helper $@"
 git config --global credential.UseHttpPath true
 
-git clone ${codecommit_url}
+git clone $codecommit_url

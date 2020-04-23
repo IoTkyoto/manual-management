@@ -10,14 +10,14 @@ phases:
       - apt-get install expect
       - pip install awscli --upgrade --user
       - pip install git-remote-codecommit
-      - bash build-scripts/git-clone.sh
+      # - bash build-scripts/git-clone.sh
   pre_build:
     commands:
       - echo "pre build"
   build:
     commands:
       - echo "build"
-      - cd manual-management
+      # - cd manual-management
       - pwd
       - ls
       - bash build-scripts/git-push.sh

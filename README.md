@@ -21,4 +21,5 @@ bundle exec jekyll serve
 ```
 
 コマンドを実行すると `Server address` が表示される。
-そこに表示されるアドレスへアクセスするとローカル内で確認ができる
+そこに表示されるアドレス(localhost:4000)へアクセスするとローカル内で確認ができる
+ただし、vis のマニュアルの画面を確認するには`localhost:4000/vis-manual/ja`または`localhost:4000/vis-manual/eg`にアクセスする必要がある

@@ -51,10 +51,12 @@
     </body>
     <script>
         const changeContentsSize = () => {
-            const contentsBoxWidth = (($(window).width() - $("#content").width()) / 2) - $(window).width() * 0.02;
+            const contentsBoxWidth = (($(window).width() - $("#content").width()) / 2) - $(window).width() * 0.01;
             const contentsBoxTop = $("header").outerHeight();
-            $(".contents-box").css('top', contentsBoxTop)
+            const contentsBoxHeight = ($(window).height() - contentsBoxTop) * 0.8;
+            $(".contents-box").css('top', contentsBoxTop);
             $(".contents-box").width(contentsBoxWidth);
+            $(".contents-box").height(contentsBoxHeight);
         };
         if (
             location.pathname.indexOf("ja") >= 0 &&
@@ -122,7 +124,7 @@
     position:fixed;
     max-width: 24rem;
     top: 25%;
-    right: 2%;
+    right: 1%;
     font-size: 1.2em;
     padding: 8px;
     height: 60%;

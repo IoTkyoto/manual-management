@@ -1,6 +1,7 @@
 ---
 layout: vis-manual
 title: How to use IoT.kyoto VIS
+description: Manual for displaying graphs with IoT.kyoto VIS
 ---
 
 # How to use IoT.kyoto VIS

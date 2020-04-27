@@ -50,6 +50,12 @@
     </main>
     </body>
     <script>
+        const changeContentsSize = () => {
+            const contentsBoxWidth = (($(window).width() - $("#content").width()) / 2) - $(window).width() * 0.02;
+            const contentsBoxTop = $("header").outerHeight();
+            $(".contents-box").css('top', contentsBoxTop)
+            $(".contents-box").width(contentsBoxWidth);
+        };
         if (
             location.pathname.indexOf("ja") >= 0 &&
             window.navigator.language !== "ja"
@@ -106,6 +112,8 @@
         contentsList.forEach(content => {
             $('.contents-box').append(`<div><a href="${content.link}">${content.title}</a></div>`)
         })
+        changeContentsSize();
+        $(window).resize(changeContentsSize);
     </script>
 </html>
 

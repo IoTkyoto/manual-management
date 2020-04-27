@@ -1,7 +1,8 @@
 ---
 layout: vis-manual
 title: IoT.kyoto VISの使い方
-description: IoT.kyoto VISでグラフ表示するためのマニュアル
+description: 初めてIoT.kyoto VISを触る型のためのマニュアルです。基本的な機能についてはこちらを参考ください。
+author: IoT.kyoto
 ---
 
 ## 目次

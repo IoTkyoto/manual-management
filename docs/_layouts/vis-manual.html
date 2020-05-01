@@ -79,25 +79,27 @@
             $(".contents-box").width(contentsBoxWidth);
             $(".contents-box").height(contentsBoxHeight);
         };
+        const redirectLanguagePage = (language) => {
+            const currentPathName = location.pathname.split("/")
+            currentPathName[currentPathName.length-2] = language
+            location.href = currentPathName.join("/")
+        }
         const selectLanguage = () => {
             const language = $(`select[name="language"]`).val();
-            const currentPathName = location.pathname.split("/")
-            currentPathName[2] = language
-            console.log(currentPathName.join("/"))
-            location.href = currentPathName.join("/")
+            redirectLanguagePage(language)
         };
         if (
             location.pathname.indexOf("ja") >= 0 &&
             window.navigator.language !== "ja" &&
             document.referrer.indexOf("vis-manual") < 0
         ) {
-            location.href = "/manual-management/vis-manual/eg/";
+            redirectLanguagePage("eg")
         } else if (
             location.pathname.indexOf("eg") >= 0 &&
             window.navigator.language === "ja" &&
             document.referrer.indexOf("vis-manual") < 0
         ) {
-            location.href = "/manual-management/vis-manual/ja/";
+            redirectLanguagePage("ja")
         }
         let contentsList = [];
         if (location.pathname.indexOf("ja") >= 0) {

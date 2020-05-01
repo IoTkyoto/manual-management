@@ -87,6 +87,8 @@
         const selectLanguage = () => {
             const language = $(`select[name="language"]`).val();
             redirectLanguagePage(language)
+            const currentPathName = location.pathname.split("/")
+            $(`select[name="language"]`).val(currentPathName[currentPathName.length-2])
         };
         if (
             location.pathname.indexOf("ja") >= 0 &&

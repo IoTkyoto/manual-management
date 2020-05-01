@@ -29,12 +29,32 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
     <!-- <a id="skip-to-content" href="#content">Skip to the content.</a> -->
 
     <header class="page-header" role="banner">
         <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <div class="select-language-box">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <i class="material-icons">
+                                language
+                            </i>
+                        </td>
+                        <td>
+                            <select name="language">
+                                <option value="ja">日本語/Japanese</option>
+                                <option value="eg">英語/English</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -59,14 +79,23 @@
             $(".contents-box").width(contentsBoxWidth);
             $(".contents-box").height(contentsBoxHeight);
         };
+        const selectLanguage = () => {
+            const language = $(`select[name="language"]`).val();
+            const currentPathName = location.pathname.split("/")
+            currentPathName[2] = language
+            console.log(currentPathName.join("/"))
+            location.href = currentPathName.join("/")
+        };
         if (
             location.pathname.indexOf("ja") >= 0 &&
-            window.navigator.language !== "ja"
+            window.navigator.language !== "ja" &&
+            document.referrer.indexOf("vis-manual") < 0
         ) {
             location.href = "/manual-management/vis-manual/eg/";
         } else if (
             location.pathname.indexOf("eg") >= 0 &&
-            window.navigator.language === "ja"
+            window.navigator.language === "ja" &&
+            document.referrer.indexOf("vis-manual") < 0
         ) {
             location.href = "/manual-management/vis-manual/ja/";
         }
@@ -91,6 +120,7 @@
                 { "title": "[付録 5] グラフを並び替える", "link": "#option5" },
                 { "title": "[付録 6] グラフを削除する", "link": "#option6" },
             ];
+            $(`select[name="language"]`).val("ja")
         } else if (location.pathname.indexOf("eg") >= 0) {
             contentsList = [
                 { "title": "[Step 0] Advance preparation", "link": "#step0" },
@@ -111,16 +141,30 @@
                 { "title": "[Option 5] Rearrange panels", "link": "#option5" },
                 { "title": "[Option 6] Delete graph", "link": "#option6" },
             ];
+            $(`select[name="language"]`).val("eg")
         }
         contentsList.forEach(content => {
             $('.contents-box').append(`<div><a href="${content.link}">${content.title}</a></div>`)
         })
         changeContentsSize();
         $(window).resize(changeContentsSize);
+        $(`select[name="language"]`).change(selectLanguage);
     </script>
 </html>
 
 <style>
+.select-language-box{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+.select-language-box select {
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+.select-language-box table td i {
+    vertical-align: middle;
+}
 .contents-box{
     position:fixed;
     max-width: 24rem;
@@ -137,10 +181,28 @@
 .contents-box div:hover {
     background-color: #eff7ff;
 }
-/* タブレットのときはコンテンツメニューを非表示にする */
+/* タブレット・スマホのとき */
 @media screen and (max-width:1024px) {
     .contents-box {
         display: none;
+    }
+}
+/* スマホのとき */
+@media screen and (max-width:505px) {
+    .select-language-box {
+        font-size: 0.8rem;
+    }
+    .select-language-box i {
+        font-size: 1rem;
+    }
+}
+/* タブレットのとき */
+@media screen and (max-width: 768px) and (min-width: 505px) {
+    .select-language-box {
+        font-size: 1.2rem;
+    }
+    .select-language-box i {
+        font-size: 1.3rem;
     }
 }
 #page_top{

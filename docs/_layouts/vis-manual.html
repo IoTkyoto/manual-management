@@ -48,7 +48,7 @@
                         <td>
                             <select name="language">
                                 <option value="ja">日本語/Japanese</option>
-                                <option value="eg">英語/English</option>
+                                <option value="en">英語/English</option>
                             </select>
                         </td>
                     </tr>
@@ -95,9 +95,9 @@
             window.navigator.language !== "ja" &&
             document.referrer.indexOf("vis-manual") < 0
         ) {
-            redirectLanguagePage("eg")
+            redirectLanguagePage("en")
         } else if (
-            location.pathname.indexOf("eg") >= 0 &&
+            location.pathname.indexOf("en") >= 0 &&
             window.navigator.language === "ja" &&
             document.referrer.indexOf("vis-manual") < 0
         ) {
@@ -125,7 +125,7 @@
                 { "title": "[付録 6] グラフを削除する", "link": "#option6" },
             ];
             $(`select[name="language"]`).val("ja")
-        } else if (location.pathname.indexOf("eg") >= 0) {
+        } else if (location.pathname.indexOf("en") >= 0) {
             contentsList = [
                 { "title": "[Step 0] Advance preparation", "link": "#step0" },
                 {
@@ -145,7 +145,7 @@
                 { "title": "[Option 5] Rearrange panels", "link": "#option5" },
                 { "title": "[Option 6] Delete graph", "link": "#option6" },
             ];
-            $(`select[name="language"]`).val("eg")
+            $(`select[name="language"]`).val("en")
         }
         contentsList.forEach(content => {
             $('.contents-box').append(`<div><a href="${content.link}">${content.title}</a></div>`)

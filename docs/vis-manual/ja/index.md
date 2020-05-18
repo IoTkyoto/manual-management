@@ -1,7 +1,7 @@
 ---
 layout: vis-manual
 title: IoT.kyoto VISの使い方
-description: 初めてIoT.kyoto VISを触る型のためのマニュアルです。基本的な機能についてはこちらを参考ください。
+description: 初めてIoT.kyoto VISを触る方のためのマニュアルです。基本的な機能についてはこちらを参考ください。
 author: IoT.kyoto
 ---
 

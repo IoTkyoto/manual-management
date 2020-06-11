@@ -63,8 +63,6 @@ IoT.kyoto VIS ではデータが Amazon DynamoDB に存在していることが�
 
 -   タイムスタンプは下記の内いずれかをお使いください。画面表示時に UTC は 設定されたタイムゾーン に自動変換されます。
 
-    **TODO: 新しいものに変更する**
-
 ```txt
 [UTC]
   YYYY-MM-DDThh:mm:ssZ

@@ -43,11 +43,11 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
 
 ![Overall configuration diagram](../../images/vis-manual/en/whole_image.png)
 
-### 2. Data required to use IoT.kyoto VIS
+### 2. Data required to use IoT.kyoto VIS.
 
-(Ex) Data required for IoT devices that output temperature and illuminance
+(Ex) Data required for IoT devices that output temperature and illuminance.
 
--   **ID and time stamp identifying the IoT device is required**
+-   **ID and time stamp identifying the IoT device is required.**
 -   In the table below, temperature and light are the measured values output from the IoT device.
 -   These data measured by the IoT device are created in DynamoDB table by [[Step 1] DynamoDB construction](#step1), and the data is written to the table. In addition, you can make a graph in real time by setting in [[Step 4] Visualize on graph screen](#step4).
 
@@ -59,8 +59,6 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
     | 02       | 2016-03-04T10:17:45Z | 21.9        | 210   |
 
 -   Use one of the following time stamps. When the screen is displayed, UTC is automatically converted to the set time zone.
-
-    **TODO: 新しいものに変更する**
 
 ```txt
 [UTC]
@@ -84,29 +82,29 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
 
 ### 3. How to write data to DynamoDB
 
--   Export device ID / time stamp / measurement value in **JSON format** as below
--   In case of csv etc., it is necessary to convert to JSON format
+-   Export device ID / time stamp / measurement value in **JSON format** as below.
+-   In case of csv etc., it is necessary to convert to JSON format.
 
 ```json
 {"light": 164, "ID": "id000", "time_sensor": "2016-03-28 15:16:48"}
 {"light": 692, "ID": "id000", "time_sensor": "2016-03-28 15:16:49"}
 ```
 
--   Write data to DynamoDB by the following method (Please also refer to [Implementation example](https://iot.kyoto/integration_case/))
-    -   Use API
-    -   Use SDK for various languages
-    -   Use [AWS CLI](https://aws.amazon.com/jp/cli/)
-    -   Write via AWS services such as AWS IoT and Lambda
-    -   Use middleware such as fluentd
-    -   Use an ETL tool such as DataSpider (OK even if it is not JSON)
--   Please refer to [AWS developer resources](https://aws.amazon.com/jp/dynamodb/developer-resources/) for API / SDK
+-   Write data to DynamoDB by the following method. (Please also refer to [Implementation example](https://iot.kyoto/integration_case/))
+    -   Use API.
+    -   Use SDK for various languages.
+    -   Use [AWS CLI](https://aws.amazon.com/jp/cli/).
+    -   Write via AWS services such as AWS IoT and Lambda.
+    -   Use middleware such as fluentd.
+    -   Use an ETL tool such as DataSpider (OK even if it is not JSON).
+-   Please refer to [AWS developer resources](https://aws.amazon.com/jp/dynamodb/developer-resources/) for API / SDK.
 
 ## [Step 1]Build a DynamoDB table<a name="step1"></a>
 
 ### 1. Sign in to the AWS Management Console
 
--   Log in to the[AWS Management Console](https://console.aws.amazon.com/)
--   Enter "dynamo" in the "Find Services" field of the Negotiation Console and select "DynamoDB"
+-   Log in to the[AWS Management Console](https://console.aws.amazon.com/).
+-   Enter "dynamo" in the "Find Services" field of the Negotiation Console and select "DynamoDB".
 
 ![How to connect to the dynamoDB console](../../images/vis-manual/en/access_to_dynamo.png)
 
@@ -126,8 +124,8 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
 
 ### 5. Enter any name for the partition key of the primary key
 
--   It is a key that contains a value that identifies the IoT device
--   Enter a name that matches the key name sent by your IoT device
+-   It is a key that contains a value that identifies the IoT device.
+-   Enter a name that matches the key name sent by your IoT device.
 -   Select "Character string" or "Numeric value" as the data type according to the value output by the IoT device.
     ![Set partition key](../../images/vis-manual/en/setting_partitionkey.png)
 
@@ -137,8 +135,8 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
 
 ### 7. Enter any name for the sort key of the primary key
 
--   Enter time such as data transmission time
--   Please enter a name along with the key name of the transmission time sent by the IoT device
+-   Enter time such as data transmission time.
+-   Please enter a name along with the key name of the transmission time sent by the IoT device.
 -   Select "Character string" or "Numeric value" as the data type according to the value output by the IoT device.
 
 ![Sort key setting](../../images/vis-manual/en/setting_sortkey.png)
@@ -157,23 +155,23 @@ Grant the access key created here to obtain records and table information of all
 
 ![Add user](../../images/vis-manual/en/select_add_user.png)
 
--   Check the box for [Programmatic access]
--   Select [Next Step]
+-   Check the box for [Programmatic access].
+-   Select [Next Step].
 
 ![Create user](../../images/vis-manual/en/create_user.png)
 
 ### 3. Set access authority
 
--   Select[Attach an existing policy directly]
--   Check the [AmazonDynamoDBReadOnlyAccess] policy and select [Next Step]
+-   Select[Attach an existing policy directly].
+-   Check the [AmazonDynamoDBReadOnlyAccess] policy and select [Next Step].
 
 ![Policy selection](../../images/vis-manual/en/select_policy.png)
 
-### 4. Enter [Add Tag] as desired and select [Next Step]
+### 4. Enter [Add Tag] as desired and select [Next Step].
 
 ### 5. Check the contents and if there is no problem, select the [Create User] button to create an account
 
--   After creating the account, download the csv file with the authentication information
+-   After creating the account, download the csv file with the authentication information.
 
     <span style="color: red;">※If you forget to download here, you will need to issue the authentication information again, so be sure to download it.</span>
 
@@ -181,7 +179,7 @@ Grant the access key created here to obtain records and table information of all
 
 ![csv download](../../images/vis-manual/en/download_csv.png)
 
-## ※How to create Access Key with limited privileges<a name="create_custom_key"></a>
+## ※How to create Access Key with limited privileges.<a name="create_custom_key"></a>
 
 If the access key has been issued, proceed to [Step 3](#step3)
 
@@ -197,37 +195,37 @@ If the access key has been issued, proceed to [Step 3](#step3)
 
 ### 3. Create a policy that grants read-only permissions for the specific DynamoDB table
 
--   Select DynamoDB from [Select Service]
+-   Select DynamoDB from [Select Service].
     ![Service selection](../../images/vis-manual/en/select_service.png)
--   Enter `getItem` in [Filter action] and check the checkbox of`GetItem`
+-   Enter `getItem` in [Filter action] and check the checkbox of`GetItem`.
     ![Select action (getItem)](../../images/vis-manual/en/check_get_item.png)
--   Enter `query` in [Filter action] and check the checkbox of`Query`
+-   Enter `query` in [Filter action] and check the checkbox of`Query`.
     ![Select action (query)](../../images/vis-manual/en/check_query.png)
--   Enter `describeTable` in [Filter action] and check the check box of`DescribeTable`
+-   Enter `describeTable` in [Filter action] and check the check box of`DescribeTable`.
     ![Select Action (describeTable)](../../images/vis-manual/en/check_describe_table.png)
--   Select Resources and select the Add ARN button
+-   Select Resources and select the Add ARN button.
     ![Resource selection](../../images/vis-manual/en/select_resource.png)
--   Fill in the required information and select the [Add] button
+-   Fill in the required information and select the [Add] button.
     ![Enter ARN](../../images/vis-manual/en/input_arn.png)
--   Confirm your entry and select [Confirm Policy]
+-   Confirm your entry and select [Confirm Policy].
     ![Select Confirm Policy](/../../images/vis-manual/en/setting_all_policy.png)
--   Enter any policy name and select [Create Policy]
+-   Enter any policy name and select [Create Policy].
     ![Policy creation completed](../../images/vis-manual/en/complete_create_policy.png)
 
 ### 4. Select [Users], open it and select [Add User] to create a user with any name
 
 ![Add user](../../images/vis-manual/en/select_add_user.png)
 
--   Check the box for [Programmatic access]
--   Click [Next Step]
+-   Check the box for [Programmatic access].
+-   Click [Next Step].
 
 ![Create user](../../images/vis-manual/en/create_user.png)
 
 ### 5. Set access authority
 
--   Select [Attach existing policy directly]
--   Check the check box of the policy created in 3 and select [Next Step]
--   Attaching the policy above will allow you to retrieve data from a specific DynamoDB
+-   Select [Attach existing policy directly].
+-   Check the check box of the policy created in 3 and select [Next Step].
+-   Attaching the policy above will allow you to retrieve data from a specific DynamoDB.
 
 ![Policy selection](../../images/vis-manual/en/select_custom_policy.png)
 
@@ -235,7 +233,7 @@ If the access key has been issued, proceed to [Step 3](#step3)
 
 ### 7. Check the contents and if there is no problem, select the [Create User] button to create an account
 
--   After creating the account, download the csv file with the authentication information
+-   After creating the account, download the csv file with the authentication information.
 
     <span style="color: red;">※If you forget to download here, you will need to issue the authentication information again, so be sure to download it.</span>
 
@@ -245,14 +243,20 @@ If the access key has been issued, proceed to [Step 3](#step3)
 
 ## [Step 3] Login using your IoT.kyoto VIS account<a name="step3"></a>
 
-### 0. Access [IoT.kyoto VIS](https://vis2.iot.kyoto){:target="\_blank"}
+<span style="color: red;">
+※Please note that IoT.kyoto VIS does not support Internet Explorer.
+
+<span style="color: red;">
+Please use modern browsers such as Google chrome and firefox.
+
+### 0. Access [IoT.kyoto VIS](https://vis2.iot.kyoto){:target="\_blank"}]
 
 ![VIS login screen](../../images/vis-manual/en/vis_login.png)
 
-1. Sign in：Please sign in here after completing new registration
+1. Sign in：Please sign in here after completing new registration.
    (You can also use the login information registered on the old VIS site here.)
 
-2. Create Account：If you do not have an account, please create one from here
+2. Create Account：If you do not have an account, please create one from here.
 3. Forgot your password?：If you forget your account password, please reissue your password here.
 
 ### 1. Create an account
@@ -271,13 +275,13 @@ After confirming the Terms of Service and checking the agreement, click the "Reg
 
 #### 1.3. Wait for the verification email to arrive at the email address you set
 
-Click the link in the email to complete registration
+Click the link in the email to complete registration.
 
 ### 2. If you forget your password
 
 #### 2.1. Select [Forgot your password?]
 
-#### 2.2. Enter your ID and select the [Reset Password] button.
+#### 2.2. Enter your ID and select the [Reset Password] button
 
 ![Authentication code transmission screen](../../images/vis-manual/en/send_code.png)
 
@@ -309,11 +313,119 @@ Select the [Reset Password] button to complete the password reset.
 
 #### 1.1. Select [Add Graph] icon
 
-**新しい設定フローに則って新しくマニュアルを作成します**
+-   Select the [Add Graph] icon.
+
+![Add Graph](../../images/vis-manual/en/select_add_graph.png)
+
+### 2. Set the credential.
+
+-   Enter the access key and secret key created in [[Step 2] Get IAM Access Key](#step2).
+-   Enter any name for the credential store name.
+
+    <span style="color: red;">※Please note that if you specify a name that is already registered, it will be overwritten.</span>
+
+-   For Region, select the region where the DynamoDB table is created and select [Next].
+
+![new credential setting](../../images/vis-manual/en/new_credential_setting.png)
+
+-   If you want to use the already registered credentials, select [Existing credentials].
+-   Select the credentials you want to use and select [Next].
+
+![existing credential setting](../../images/vis-manual/en/existing_credential.png)
+
+### 3. Enter the table name.
+
+-   Enter the table name to visualize the graph.
+-   Select [Check connection].
+-   If there is no mistake in the partition key and sort key information, select [Next].
+
+<span style="color: red;">※If "Please check the table name" is displayed at this time, the entered table does not exist. Make sure the table name is entered correctly.</span>
+
+<span style="color: red;">※At this time, if "Please check the credential set in Step1." is displayed, it is possible that the authentication information has not been entered correctly or that the required authentication information has not been granted. Please check each. Please confirm [[Step 2] Get IAM Access Key](#step2).</span>
+
+|![input table name](../../images/vis-manual/en/input_table_name.png)|![confirm table info](../../images/vis-manual/en/confirm_table_info.png)|
+
+### 4. Set the date format of sensor data
+
+-   Select [Unix] or [Others].
+-   For [Unix], select either 13 digits that include milliseconds or 10 digits that do not include milliseconds and select [Next].
+-   For [Others], select each according to the format of the date and time sent from the sensor and select [Done].
+-   If the time zone is not specified within the date and time, set (b) to "(empty)" and select the time zone of the sensor data date and time in [Local time zone].
+-   Check that the format is correct and select [Next].
+
+![format setting](../../images/vis-manual/en/select_format.png)
+![select format](../../images/vis-manual/en/select_time_format.png)
+![confirm format](../../images/vis-manual/en/confirm_time_format.png)
+
+### 5. Check the settings and save
+
+-   Confirm that the settings are correct and select [Save]
+
+![confirm graph setting](../../images/vis-manual/en/graph_setting_confirm.png)
+
+### 6. Select the sensor you want to display
+
+-   After returning to the graph screen, select the sensor you want to display from the image selector.
+
+![select sensor](../../images/vis-manual/en/select_partitionkey_value.png)
+
+#### When there is no sensor to display
+
+-   Select [Add] in the selector.
+-   Enter the partition key value you want to display in the displayed form and select [Add].
+-   Select [Cancel] to return to the selector and select the key you just added.
+
+![add partition key](../../images/vis-manual/en/add_partition_key.png)
+
+### 7. Select the display target key you want to display and draw a graph
+
+-   Select the update key button
+-   The graph is drawn by selecting the item of the graph you want to display from the options displayed next to the display target key
+
+※Drawing is not possible if the latest data does not exist
+
+![update target keys](../../images/vis-manual/en/select_update_display_keys.png)
+![draw graph](../../images/vis-manual/en/display_graph.png)
 
 ## [Option 1] Change graph settings<a name="option1"></a>
 
-**設定フローの修正完了後対応します**
+Here we will show you how to set the graph title and update frequency.
+
+### 1. Open the graph setting screen
+
+-   Select the [gear icon] on the graph screen whose settings you want to change.
+
+![graph setting icon](../../images/vis-manual/en/select_graph_setting.png)
+
+-   Select [Manual Setting] from the setting screen
+
+![manual setting](../../images/vis-manual/en/select_manual_setting.png)
+
+-   Select [Graph Display] tab
+
+![graph display setting](../../images/vis-manual/en/open_draw_graph_setting.png)
+
+### 2. Make various settings
+
+![graph display setting overall](../../images/vis-manual/en/draw_graph_setting_over_all.png)
+
+1. You can change the title displayed at the top of the graph.
+2. You can set the interval to update the graph data.
+
+    The minimum value is 1 second, but decreasing the value will narrow the graph drawing width.
+
+3. You can specify the length of the data drawn in the graph.
+
+    Get the specified amount of data from the current time.
+
+4. You can set the date and time format to be displayed on the horizontal axis of the graph.
+5. You can set the range of the vertical axis.
+
+    If "off", it is set automatically.
+
+6. You can set how to connect the graph data.
+7. Selectable partition key can be deleted/added.
+8. Selectable display target keys can be deleted/added.
 
 ## [Option 2] Set the threshold<a name="option2"></a>
 

@@ -63,6 +63,9 @@ IoT.kyoto VIS assumes that your data is in Amazon DynamoDB.
 ```txt
 [UTC]
   YYYY-MM-DDThh:mm:ssZ
+  YYYY-MM-DDThh:mm:ss.sssZ
+  YYYY/MM/DDThh:mm:ssZ
+  YYYY/MM/DDThh:mm:ss.sssZ
   UNIX timestamp(Integer 10 digits)
   UNIX timestamp(Integer 13 digits)
 [Other]

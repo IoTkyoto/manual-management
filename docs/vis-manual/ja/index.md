@@ -66,6 +66,9 @@ IoT.kyoto VIS ではデータが Amazon DynamoDB に存在していることが�
 ```txt
 [UTC]
   YYYY-MM-DDThh:mm:ssZ
+  YYYY-MM-DDThh:mm:ss.sssZ
+  YYYY/MM/DDThh:mm:ssZ
+  YYYY/MM/DDThh:mm:ss.sssZ
   UNIXタイムスタンプ(整数10桁)
   UNIXタイムスタンプ(整数13桁)
 [それ以外]

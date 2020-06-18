@@ -182,13 +182,13 @@ Here we will be generating an access key that are granted access to table inform
 
 -   After creating the account, a CSV file that contains the user's authentication information will be generated; press [Download .csv] and download the file.
 
-    <span style="color: red;">※If you forget to download the CSV file, you may have to recreate the authentication information, so be sure to download it.</span>
+    <span style="color: red;">Note: if you forget to download the CSV file, you may have to recreate the authentication information, so be sure to download it.</span>
 
 ![New user confirmation](../../images/vis-manual/en/verification_create_user.png)
 
 ![csv download](../../images/vis-manual/en/download_csv.png)
 
-## ※How to create an Access Key with limited privileges<a name="create_custom_key"></a>
+## How to create an Access Key with limited privileges<a name="create_custom_key"></a>
 
 If you have already generated the access key, proceed to [Step 3](#step3).
 

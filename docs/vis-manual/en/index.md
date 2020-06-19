@@ -47,7 +47,7 @@ Below shows the data required for IoT devices that output temperature and illumi
 
 -   **ID and timestamp are required.** ID identifies the connected IoT device, and timestamp identifies the time of measurement, recording etc of each data.
 -   In the table below, "temperature" and "light" are the measured values output from the IoT device.
--   The data from the IoT device is transmitted and stored in DynamoDB table in [[Step 1] Create a DynamoDB table](#step1). In addition, you can make a line graph of the data in real time in [[Step 4] Create a graph](#step4).
+-   The data from the IoT device is transmitted and stored in a DynamoDB table in [[Step 1] Create a DynamoDB table](#step1). In addition, you can make a line graph of the data in real time in [[Step 4] Create a graph](#step4).
 
     | deviceID | time                 | temperature | light |
     | -------- | -------------------- | ----------- | ----- |
@@ -127,7 +127,7 @@ Below shows the data required for IoT devices that output temperature and illumi
 
 -   This key should contain a value that identifies an IoT device from which the data is transmitted.
 -   Enter the key name of which value is used to identify an IoT device.
--   Select "Character string" or "Numeric value" as its data type according to the output value format of your IoT device.
+-   Select "String" or "Number" as its data type according to the output value format of your IoT device.
 
 ![Set partition key](../../images/vis-manual/en/setting_partitionkey.png)
 
@@ -160,7 +160,7 @@ Here we will be generating an access key that are granted access to table inform
 
 ![IAM console selection](../../images/vis-manual/en/open_iam.png)
 
-### 2. Select [Users] to open it. Press [Add User] to create a user with any name.
+### 2. Select [Users] to open it. Press [Add user] to create a user with any name.
 
 ![Add user](../../images/vis-manual/en/select_add_user.png)
 
@@ -198,7 +198,7 @@ If you have already generated the access key, proceed to [Step 3](#step3).
 
 ![IAM console selection](../../images/vis-manual/en/open_iam.png)
 
-### 2. Select "Policies" to open it. Press "Create policy".
+### 2. Select "Policies" to open it. Press [Create policy].
 
 ![Policy creation screen](../../images/vis-manual/en/select_create_policy.png)
 
@@ -221,7 +221,7 @@ If you have already generated the access key, proceed to [Step 3](#step3).
 -   Enter any policy name and press [Create policy].
     ![Policy creation completed](../../images/vis-manual/en/complete_create_policy.png)
 
-### 4. Select [Users] to open it. Press [Add User] to create a user with any name.
+### 4. Select [Users] to open it. Press [Add user] to create a user with any name.
 
 ![Add user](../../images/vis-manual/en/select_add_user.png)
 
@@ -255,7 +255,7 @@ If you have already generated the access key, proceed to [Step 3](#step3).
 <span style="color: red;">
 Note: IoT.kyoto VIS does not support Internet Explorer; use modern browsers such as Google Chrome and Firefox.
 
-### 0. Access [IoT.kyoto VIS](https://vis2.iot.kyoto){:target="\_blank"}].
+### 0. Access [IoT.kyoto VIS](https://vis2.iot.kyoto){:target="\_blank"}.
 
 ![VIS login screen](../../images/vis-manual/en/vis_login.png)
 
@@ -384,7 +384,7 @@ Press [Reset Password] to complete the password reset.
 
 ### 7. Select the display target key you want to display and draw a graph.
 
--   press the [Reload target keys] icon.
+-   Press the [Reload target keys] icon.
 -   The graph is drawn by selecting the item of the graph you want to display from the options displayed next to the display target key.
 
 Note: graph may not be created if the latest data is older than the time range set in the graph setting (default is 5 minutes).
@@ -472,9 +472,9 @@ Here we will show you how to set the graph title and update frequency.
 
 -   If you specify the alert mail destination in the threshold setting, you can receive an email* of the alert notification when the value exceeds / below the threshold.
 
-    *In Japanese, sorry! English version coming soon.
+    *In Japanese, sorry! English version coming soon. The image below is an example of the content of the alert mail.
 
-    <span style="color: red;">Note: you can receive emails only while you are on the IoT.kyoto VIS page</span>
+    <span style="color: red;">Note: you can receive emails only while you are on the IoT.kyoto VIS page.</span>
 
 ![Alert mail example](../../images/vis-manual/en/alert_mail.png)
 
@@ -501,9 +501,7 @@ Here we will show you how to set the graph title and update frequency.
 
 ![search results](../../images/vis-manual/en/search_result.png)
 
-<span style="color: red;">Note: data acquisition may fail depending on the read capacity of the referenced DynamoDB table.</span>
-
-<span style="color: red;"> In this case, please narrow the search target period or adjust the read capacity of the DynamoDB table.</span>
+<span style="color: red;">Note: data acquisition may fail depending on the read capacity of the referenced DynamoDB table; please narrow the search target period or adjust the read capacity of the DynamoDB table in this case.</span>
 
 ## [Option 4] Download data in CSV file<a name="option4"></a>
 
@@ -527,13 +525,9 @@ Here we will show you how to set the graph title and update frequency.
 
 ![csv download result](../../images/vis-manual/en/csv_download_result.png)
 
-<span style="color: red;">Note: data download may fail if number of record exceeds 100,000 or the data size is over 5MB.</span>
+<In style="color: red;">Note: data download may fail if number of record exceeds 100,000 or the data size is over 5MB; please adjust the target period in this case.</span>
 
-<span style="color: red;">In this case, please adjust the target period.</span>
-
-<span style="color: red;">Note: depending on the read capacity of the target DynamoDB table, the data acquisition may fail even if the target data size does not exceed the limitations.</span>
-
-<span style="color: red;">In that case, please adjust the target period or read capacity of DynamoDB table.</span>
+<span style="color: red;">Note: depending on the read capacity of the target DynamoDB table, the data acquisition may fail even if the target data size does not exceed the limitations; please adjust the target period or read capacity of DynamoDB table in this case.</span>
 
 ## [Option 5] Rearrange panels<a name="option5"></a>
 
@@ -541,7 +535,7 @@ This feature is available only when you have multiple graph panels.
 
 ### 1. Switch to panels sort mode.
 
--   Press the [Rearrange Panels] (crossing arrows) icon at the top right of the page.
+-   Press the [Rearrange panels] (crossing arrows) icon at the top right of the page.
 
 ![Sort mode switching selection](../../images/vis-manual/en/select_move_graph.png)
 
@@ -553,7 +547,7 @@ This feature is available only when you have multiple graph panels.
 
 ### 3. Exit sort mode.
 
--   End sorting mode by pressing either [End Rearrange Mode] on one of the graph panels or the [Rearrange panels] icon pressed in 1.
+-   End sorting mode by pressing either [End Rearrange Mode] on one of the graph panels or the [Rearrange panels] (crossing arrows) icon pressed in 1.
 
 ![End sort](../../images/vis-manual/en/quit_move_graph.png)
 

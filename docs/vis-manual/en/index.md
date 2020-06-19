@@ -100,7 +100,7 @@ Below shows the data required for IoT devices that output temperature and illumi
     -   Use an ETL tool such as DataSpider (OK even if it is not JSON).
 -   Please refer to [AWS developer resources](https://aws.amazon.com/jp/dynamodb/developer-resources/) for API / SDK.
 
-## [Step 1]Create a DynamoDB table<a name="step1"></a>
+## [Step 1] Create a DynamoDB table<a name="step1"></a>
 
 ### 1. Sign in to the AWS Management Console.
 
@@ -150,7 +150,7 @@ Below shows the data required for IoT devices that output temperature and illumi
 
 ![Creation of the Dynamodb table](../../images/vis-manual/en/create_dynamodb_end.png)
 
-## [Step 2]Get IAM Access Key<a name="step2"></a>
+## [Step 2] Get IAM Access Key<a name="step2"></a>
 
 Here we will be generating an access key that are granted access to table information of all DynamoDB tables and their data. If you want to narrow down the permission, please refer to the procedure [here](#create_custom_key).
 

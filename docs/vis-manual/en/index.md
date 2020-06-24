@@ -259,11 +259,11 @@ Note: IoT.kyoto VIS does not support Internet Explorer; use modern browsers such
 
 ![VIS login screen](../../images/vis-manual/en/vis_login.png)
 
-1. [Sign In]: sign in from here after completion of registration.
+1. Sign In: sign in from here after completion of registration.
    (You can also use the login information registered on the old VIS site here.)
 
-2. [Create Account]: if you do not have an account, please create one from here.
-3. [Forgot your password?]: if you forget your account password, please reissue your password here.
+2. Create Account: if you do not have an account, please create one from here.
+3. Forgot your password?: if you forget your account password, please reissue your password here.
 
 ### 1. Create an account
 
@@ -307,13 +307,13 @@ Press [Reset Password] to complete the password reset.
 
 ![Graph screen menu](../../images/vis-manual/en/vis_menu.png)
 
-1. [General Settings]: change time zone and language settings
-2. [IoT.kyoto]: move to [IoT.kyoto](https://iot.kyoto){:target="\_blank"}
-3. [How to Use]: move to this page
-4. [Log out]: log out
-5. [Add Graph]: add a graph
-6. [Rearrange panels]: sort the graphs (if there are more than one)
-7. [Change graph size]: show the graphs in two columns or one column
+1. General Settings: change time zone and language settings.
+2. IoT.kyoto: move to [IoT.kyoto](https://iot.kyoto){:target="\_blank"}.
+3. How to Use: move to this page.
+4. Log out: log out.
+5. Add graph: add a graph.
+6. Rearrange panels: sort the graphs (if there are more than one).
+7. Change graph size: show the graphs in two columns or one column.
 
 ### 1. Add a graph
 
@@ -525,7 +525,7 @@ Here we will show you how to set the graph title and update frequency.
 
 ![csv download result](../../images/vis-manual/en/csv_download_result.png)
 
-<In style="color: red;">Note: data download may fail if number of record exceeds 100,000 or the data size is over 5MB; please adjust the target period in this case.</span>
+<span style="color: red;">Note: data download may fail if number of record exceeds 100,000 or the data size is over 5MB; please adjust the target period in this case.</span>
 
 <span style="color: red;">Note: depending on the read capacity of the target DynamoDB table, the data acquisition may fail even if the target data size does not exceed the limitations; please adjust the target period or read capacity of DynamoDB table in this case.</span>
 

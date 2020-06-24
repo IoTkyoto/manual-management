@@ -56,7 +56,7 @@ Below shows the data required for IoT devices that output temperature and illumi
     | 01       | 2016-03-04T10:17:45Z | 25.8        | 98    |
     | 02       | 2016-03-04T10:17:45Z | 21.9        | 210   |
 
--   Use one of the following timestamps. UTC time will be automatically converted to the local time zone you set when generating the graph.
+-   Use one of the following timestamps; display time on a graph will be automatically converted to the local time zone you set (default is +09:00).
 
 ```txt
 [UTC]

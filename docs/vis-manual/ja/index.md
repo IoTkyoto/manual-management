@@ -535,11 +535,11 @@ ID がメールアドレスと同様で問題なければ「メールアドレ�
 
 ![csvダウンロード結果](../../images/vis-manual/ja/csv_download_result.png)
 
-<span style="color: red;">※取得対象データが 100,000 件あるいは 5MB を超える場合はダウンロードできません</span>
+<span style="color: red;">※取得対象データが 50,000 件あるいは 5MB を超える場合はダウンロードできません</span>
 
 <span style="color: red;">その場合は対象期間を調整してください</span>
 
-<span style="color: red;">※取得対象データが 100,000 件、5MB に収まっていても対象の DynamoDB テーブルの読み込みキャパシティの状況によってデータの取得に失敗することがあります</span>
+<span style="color: red;">※取得対象データが 50,000 件、5MB に収まっていても対象の DynamoDB テーブルの読み込みキャパシティの状況によってデータの取得に失敗することがあります</span>
 
 <span style="color: red;">その場合は対象期間を調整したり DynamoDB テーブルの読み込みキャパシティを調整してください</span>
 

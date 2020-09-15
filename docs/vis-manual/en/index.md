@@ -525,7 +525,7 @@ Here we will show you how to set the graph title and update frequency.
 
 ![csv download result](../../images/vis-manual/en/csv_download_result.png)
 
-<span style="color: red;">Note: data download may fail if number of record exceeds 100,000 or the data size is over 5MB; please adjust the target period in this case.</span>
+<span style="color: red;">Note: data download may fail if number of record exceeds 50,000 or the data size is over 5MB; please adjust the target period in this case.</span>
 
 <span style="color: red;">Note: depending on the read capacity of the target DynamoDB table, the data acquisition may fail even if the target data size does not exceed the limitations; please adjust the target period or read capacity of DynamoDB table in this case.</span>
 
